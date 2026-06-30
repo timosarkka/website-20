@@ -123,26 +123,18 @@
     </header>
 
     <main>
-      <div class="page" style="max-width: 800px">
+      <div class="page" style="max-width: 1100px">
         <h1 class="page-title">Projects</h1>
 
         <div class="projects-controls">
           <div class="projects-filter">
-            <span class="filter-label">Filter:</span>
             <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="data-visualization">
-              Data Visualization
-            </button>
-            <button class="filter-btn" data-filter="data-engineering">
-              Data Engineering
-            </button>
-          </div>
-          <div class="projects-sort">
-            <label class="sort-label" for="sort-select">Sort:</label>
-            <select class="sort-select" id="sort-select">
-              <option value="year">Newest first</option>
-              <option value="name">Name (A–Z)</option>
-            </select>
+            <button class="filter-btn" data-filter="data-viz">Data Viz</button>
+            <button class="filter-btn" data-filter="data-engineering">Data Engineering</button>
+            <button class="filter-btn" data-filter="dbt">dbt</button>
+            <button class="filter-btn" data-filter="snowflake">Snowflake</button>
+            <button class="filter-btn" data-filter="d3">D3.js</button>
+            <button class="filter-btn" data-filter="power-bi">Power BI</button>
           </div>
         </div>
 
@@ -156,28 +148,20 @@
     <script src="js/main.js"></script>
     <script>
       const tagLabels = {
-        "data-visualization": "Data Viz",
+        "data-viz": "Data Viz",
         "data-engineering": "Data Engineering",
-        d3: "D3.js",
         dbt: "dbt",
-        maps: "Maps",
-        python: "Python",
         snowflake: "Snowflake",
+        d3: "D3.js",
+        "power-bi": "Power BI",
       };
 
       function renderProjects() {
         const activeFilter =
           document.querySelector(".filter-btn.active").dataset.filter;
-        const sortValue = document.getElementById("sort-select").value;
 
-        let filtered = projects.filter(
+        const filtered = projects.filter(
           (p) => activeFilter === "all" || p.tags.includes(activeFilter),
-        );
-
-        filtered.sort((a, b) =>
-          sortValue === "name"
-            ? a.title.localeCompare(b.title)
-            : b.year - a.year,
         );
 
         const grid = document.getElementById("projects-grid");
@@ -189,19 +173,23 @@
         }
 
         grid.innerHTML = filtered
-          .map(
-            (p) => `
-      <div class="project-card">
-        <div class="project-card-title">
-          <a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>
+          .map((p) => {
+            const bgStyle = p.image
+              ? `background-image: url('${p.image}'); background-size: cover; background-position: center;`
+              : `background-color: ${p.placeholderColor};`;
+            const pills = p.tags
+              .map((t) => `<span class="project-tag">${tagLabels[t] || t}</span>`)
+              .join("");
+            return `
+      <a class="project-card${p.size === "tall" ? " tall" : ""}" href="${p.url}" target="_blank" rel="noopener">
+        <div class="project-card-bg" style="${bgStyle}"></div>
+        <div class="project-card-overlay">
+          <div class="project-card-title">${p.title}</div>
+          <p class="project-card-desc">${p.description}</p>
+          <div class="project-card-tags">${pills}</div>
         </div>
-        <p class="project-card-desc">${p.description}</p>
-        <div class="project-card-tags">
-          ${p.tags.map((t) => `<span class="project-tag">${tagLabels[t] || t}</span>`).join("")}
-        </div>
-      </div>
-    `,
-          )
+      </a>`;
+          })
           .join("");
       }
 
@@ -214,10 +202,6 @@
           renderProjects();
         });
       });
-
-      document
-        .getElementById("sort-select")
-        .addEventListener("change", renderProjects);
 
       renderProjects();
     </script>
