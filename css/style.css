@@ -2,32 +2,34 @@
    CSS Custom Properties
    ============================================================ */
 :root {
-  --bg:            #f0efeb;
-  --bg-card:       #e8e5df;
-  --text:          #2a2a2a;
-  --text-muted:    #666666;
-  --accent:        #4a7ec0;
-  --accent-hover:  #3a6eb0;
-  --border:        #d4d2cc;
-  --radius:        6px;
-  --content-width: 600px;
-  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bg: #f5f4f1;
+  --bg-card: #e8e5df;
+  --text: #2a2a2a;
+  --text-muted: #666666;
+  --accent: #4a7ec0;
+  --accent-hover: #3a6eb0;
+  --border: #d4d2cc;
+  --radius: 6px;
+  --content-width: min(700px, 90vw);
+  --font: "Libre Franklin", system-ui, sans-serif;
 }
 
 [data-theme="dark"] {
-  --bg:            #1e1e28;
-  --bg-card:       #2a2a36;
-  --text:          #e2e2e8;
-  --text-muted:    #8888a0;
-  --accent:        #6b9fd4;
-  --accent-hover:  #8ab8e4;
-  --border:        #38384a;
+  --bg: #1e1e28;
+  --bg-card: #2a2a36;
+  --text: #e2e2e8;
+  --text-muted: #8888a0;
+  --accent: #6b9fd4;
+  --accent-hover: #8ab8e4;
+  --border: #38384a;
 }
 
 /* ============================================================
    Reset & Base
    ============================================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -43,7 +45,9 @@ body {
   font-family: var(--font);
   font-size: 0.9375rem;
   line-height: 1.7;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
   min-height: 100vh;
 }
 
@@ -146,10 +150,18 @@ header {
   height: 18px;
 }
 
-.icon-sun  { display: none; }
-.icon-moon { display: block; }
-[data-theme="dark"] .icon-sun  { display: block; }
-[data-theme="dark"] .icon-moon { display: none; }
+.icon-sun {
+  display: none;
+}
+.icon-moon {
+  display: block;
+}
+[data-theme="dark"] .icon-sun {
+  display: block;
+}
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
 
 /* Hamburger button */
 .nav-hamburger {
@@ -172,7 +184,9 @@ header {
   height: 2px;
   background: currentColor;
   border-radius: 1px;
-  transition: transform 0.2s, opacity 0.2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
 }
 .nav-hamburger.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -248,9 +262,9 @@ header {
 }
 
 .home-avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
   object-fit: cover;
   margin: 0 auto 20px;
   background: var(--bg-card);
@@ -469,7 +483,9 @@ header {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
 }
 .project-card:hover {
   border-color: var(--accent);

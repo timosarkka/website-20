@@ -1,112 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About me — Timo Särkä</title>
-  <meta name="description" content="About Timo Särkä — analytics engineer based in Helsinki.">
-  <link rel="stylesheet" href="css/style.css">
-  <script>
-    (function () {
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === 'dark' || (!saved && prefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    })();
-  </script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About me — Timo Särkkä</title>
+    <meta
+      name="description"
+      content="About Timo Särkkä — analytics engineer based in Helsinki."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700&display=swap"
+    />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="index.html" class="nav-brand">
+          <img
+            src="images/profilepic_big.png"
+            alt=""
+            class="nav-avatar"
+            onerror="this.style.visibility = 'hidden'"
+          />
+          Timo Särkkä
+        </a>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="index.html" data-nav-link>Home</a></li>
+            <li><a href="about.html" data-nav-link>About me</a></li>
+            <li><a href="projects.html" data-nav-link>Projects</a></li>
+            <li><a href="writing.html" data-nav-link>Writing</a></li>
+            <li><a href="now.html" data-nav-link>Now</a></li>
+          </ul>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div class="nav-mobile" id="nav-mobile">
+        <a href="index.html" data-nav-link>Home</a>
+        <a href="about.html" data-nav-link>About me</a>
+        <a href="projects.html" data-nav-link>Projects</a>
+        <a href="writing.html" data-nav-link>Writing</a>
+        <a href="now.html" data-nav-link>Now</a>
+        <div class="nav-mobile-footer">
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
 
-<header>
-  <nav class="nav">
-    <a href="index.html" class="nav-brand">
-      <img src="images/avatar.jpg" alt="" class="nav-avatar" onerror="this.style.visibility='hidden'">
-      Timo Särkä
-    </a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="index.html" data-nav-link>Home</a></li>
-        <li><a href="about.html" data-nav-link>About me</a></li>
-        <li><a href="projects.html" data-nav-link>Projects</a></li>
-        <li><a href="writing.html" data-nav-link>Writing</a></li>
-        <li><a href="now.html" data-nav-link>Now</a></li>
-      </ul>
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-    </div>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="index.html" data-nav-link>Home</a>
-    <a href="about.html" data-nav-link>About me</a>
-    <a href="projects.html" data-nav-link>Projects</a>
-    <a href="writing.html" data-nav-link>Writing</a>
-    <a href="now.html" data-nav-link>Now</a>
-    <div class="nav-mobile-footer">
-      <span>Toggle theme</span>
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
+    <main>
+      <div class="page">
+        <h1 class="page-title">About me</h1>
 
-<main>
-  <div class="page">
-    <h1 class="page-title">About me</h1>
+        <div class="about-meta">
+          <p>
+            This page describes me in a nutshell. I'll keep updating it every
+            now and then with relevant info.
+          </p>
+          <p class="updated">Last updated 19.4.2026.</p>
+        </div>
 
-    <div class="about-meta">
-      <p>This page describes me in a nutshell. I'll keep updating it every now and then with relevant info.</p>
-      <p class="updated">Last updated 19.4.2026.</p>
-    </div>
+        <div class="about-section">
+          <h2>Basic info</h2>
+          <ul>
+            <li>
+              I'm an <strong>analytics engineer</strong> at
+              <a
+                href="https://www.breakoutlabs.fi"
+                target="_blank"
+                rel="noopener"
+                >Breakout Labs</a
+              >.
+            </li>
+            <li>
+              I specialize in
+              <a href="https://www.getdbt.com" target="_blank" rel="noopener"
+                >dbt</a
+              >,
+              <a href="https://www.snowflake.com" target="_blank" rel="noopener"
+                >Snowflake</a
+              >
+              and
+              <a
+                href="https://www.dataladdervault.com"
+                target="_blank"
+                rel="noopener"
+                >Data Vault</a
+              >
+              consulting.
+            </li>
+            <li>
+              I'm a
+              <a
+                href="https://www.getdbt.com/certifications/analytics-engineer"
+                target="_blank"
+                rel="noopener"
+                >dbt Certified Developer</a
+              >
+              and also
+              <a
+                href="https://www.snowflake.com/certifications/"
+                target="_blank"
+                rel="noopener"
+                >SnowPro Core</a
+              >-certified.
+            </li>
+            <li>
+              Live in
+              <a
+                href="https://en.wikipedia.org/wiki/Helsinki"
+                target="_blank"
+                rel="noopener"
+                >Helsinki, Finland</a
+              >
+              (it's beautiful here btw).
+            </li>
+            <li>
+              Originally an <strong>M.Sc. in Mechanical Engineering</strong>, I
+              switched careers to data through a
+              <a
+                href="https://www.dataliteracy.fi"
+                target="_blank"
+                rel="noopener"
+                >data bootcamp</a
+              >.
+            </li>
+            <li>
+              Dad to a 5-year-old son and a 6-year-old sheltie, husband and
+              deeply curious about life.
+            </li>
+          </ul>
+        </div>
 
-    <div class="about-section">
-      <h2>Basic info</h2>
-      <ul>
-        <li>I'm an <strong>analytics engineer</strong> at <a href="https://www.breakoutlabs.fi" target="_blank" rel="noopener">Breakout Labs</a>.</li>
-        <li>I specialize in <a href="https://www.getdbt.com" target="_blank" rel="noopener">dbt</a>, <a href="https://www.snowflake.com" target="_blank" rel="noopener">Snowflake</a> and <a href="https://www.dataladdervault.com" target="_blank" rel="noopener">Data Vault</a> consulting.</li>
-        <li>I'm a <a href="https://www.getdbt.com/certifications/analytics-engineer" target="_blank" rel="noopener">dbt Certified Developer</a> and also <a href="https://www.snowflake.com/certifications/" target="_blank" rel="noopener">SnowPro Core</a>-certified.</li>
-        <li>Live in <a href="https://en.wikipedia.org/wiki/Helsinki" target="_blank" rel="noopener">Helsinki, Finland</a> (it's beautiful here btw).</li>
-        <li>Originally an <strong>M.Sc. in Mechanical Engineering</strong>, I switched careers to data through a <a href="https://www.dataliteracy.fi" target="_blank" rel="noopener">data bootcamp</a>.</li>
-        <li>Dad to a 5-year-old son and a 6-year-old sheltie, husband and deeply curious about life.</li>
-      </ul>
-    </div>
+        <div class="about-section">
+          <h2>Contact</h2>
+          <p>
+            If you want to drop a quick line, here's my
+            <a href="mailto:timojsarkka@gmail.com">email</a>.
+          </p>
+        </div>
 
-    <div class="about-section">
-      <h2>Contact</h2>
-      <p>If you want to drop a quick line, here's my <a href="mailto:timojsarkka@gmail.com">email</a>.</p>
-    </div>
+        <div class="about-section">
+          <h2>Projects &amp; CV</h2>
+          <p>
+            To see some personal projects I've built, visit my
+            <a
+              href="https://github.com/timosarkka"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            profile.
+          </p>
+          <p>
+            For my CV, check
+            <a
+              href="https://linkedin.com/in/timosarkka"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >.
+          </p>
+        </div>
 
-    <div class="about-section">
-      <h2>Projects &amp; CV</h2>
-      <p>To see some personal projects I've built, visit my <a href="https://github.com/timosarkka" target="_blank" rel="noopener">GitHub</a> profile.</p>
-      <p>For my CV, check <a href="https://linkedin.com/in/timosarkka" target="_blank" rel="noopener">LinkedIn</a>.</p>
-    </div>
+        <div class="about-section">
+          <h2>How I got here</h2>
+          <p>
+            Originally, I worked in the shipbuilding and heavy industries for
+            almost 10 years. First as a project engineer, then as a project
+            manager. But computers have always been a part of my life and in the
+            recent years I got seriously curious about IT and data. For quite
+            long I tried to do the switch through self-studying (I think the
+            first time was back in 2016!), but it never truly worked out.
+          </p>
+          <p>
+            Then I applied and got selected to a
+            <a href="https://www.dataliteracy.fi" target="_blank" rel="noopener"
+              >data bootcamp</a
+            >. I was hooked instantly. The world of
+            <strong>data, IT, coding, computers</strong> and
+            <strong>AI</strong> was just mezmerizing. Shortly after graduating
+            from the bootcamp, I got my first assignment as a
+            <strong>data engineer</strong>. In the beginning, I naturally spent
+            time on learning the ropes of this profession: working with tools
+            like <strong>Snowflake, Azure, Matillion ETL</strong> and
+            <strong>Power BI</strong> and building the standard data pipelines
+            and visualization dashboards from end to finish.
+          </p>
+          <p>
+            After a few lucky coincidences, I found a tool called
+            <a href="https://www.getdbt.com" target="_blank" rel="noopener"
+              >dbt</a
+            >
+            and almost simultaneously got a chance to work out with the founders
+            of
+            <a href="https://www.breakoutlabs.fi" target="_blank" rel="noopener"
+              >Breakout Labs</a
+            >. After freelancing for them for a while, I got invited to join
+            their company as an <strong>analytics engineer</strong> and employee
+            no. 1.
+          </p>
+          <p>
+            And, well, here I am, learning more about data every day and having
+            fun building our awesome startup!
+          </p>
+        </div>
 
-    <div class="about-section">
-      <h2>How I got here</h2>
-      <p>Originally, I worked in the shipbuilding and heavy industries for almost 10 years. First as a project engineer, then as a project manager. But computers have always been a part of my life and in the recent years I got seriously curious about IT and data. For quite long I tried to do the switch through self-studying (I think the first time was back in 2016!), but it never truly worked out.</p>
-      <p>Then I applied and got selected to a <a href="https://www.dataliteracy.fi" target="_blank" rel="noopener">data bootcamp</a>. I was hooked instantly. The world of <strong>data, IT, coding, computers</strong> and <strong>AI</strong> was just mezmerizing. Shortly after graduating from the bootcamp, I got my first assignment as a <strong>data engineer</strong>. In the beginning, I naturally spent time on learning the ropes of this profession: working with tools like <strong>Snowflake, Azure, Matillion ETL</strong> and <strong>Power BI</strong> and building the standard data pipelines and visualization dashboards from end to finish.</p>
-      <p>After a few lucky coincidences, I found a tool called <a href="https://www.getdbt.com" target="_blank" rel="noopener">dbt</a> and almost simultaneously got a chance to work out with the founders of <a href="https://www.breakoutlabs.fi" target="_blank" rel="noopener">Breakout Labs</a>. After freelancing for them for a while, I got invited to join their company as an <strong>analytics engineer</strong> and employee no. 1.</p>
-      <p>And, well, here I am, learning more about data every day and having fun building our awesome startup!</p>
-    </div>
+        <div class="about-section">
+          <h2>What I enjoy outside of work</h2>
+          <p>
+            <strong>My family.</strong> I have a 5-year-old son and the most
+            beautiful spouse who has stayed with me over 7 years already! I try
+            to spend quality time with them as often as possible.
+          </p>
+          <p>
+            <strong>The gym.</strong> I started going to the gym a few years ago
+            and I've never looked back. It keeps me sane and energized.
+          </p>
+          <p>
+            <strong>Reading.</strong> Mostly non-fiction — I'm always in the
+            middle of a book about technology, productivity or business.
+          </p>
+          <p>
+            <strong>Our sheltie.</strong> Dogs are the best companions, and ours
+            is no exception.
+          </p>
+        </div>
+      </div>
+    </main>
 
-    <div class="about-section">
-      <h2>What I enjoy outside of work</h2>
-      <p><strong>My family.</strong> I have a 5-year-old son and the most beautiful spouse who has stayed with me over 7 years already! I try to spend quality time with them as often as possible.</p>
-      <p><strong>The gym.</strong> I started going to the gym a few years ago and I've never looked back. It keeps me sane and energized.</p>
-      <p><strong>Reading.</strong> Mostly non-fiction — I'm always in the middle of a book about technology, productivity or business.</p>
-      <p><strong>Our sheltie.</strong> Dogs are the best companions, and ours is no exception.</p>
-    </div>
-  </div>
-</main>
-
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

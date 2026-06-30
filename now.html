@@ -1,88 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Now — Timo Särkä</title>
-  <meta name="description" content="What Timo Särkä is up to right now.">
-  <link rel="stylesheet" href="css/style.css">
-  <script>
-    (function () {
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === 'dark' || (!saved && prefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    })();
-  </script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Now — Timo Särkkä</title>
+    <meta name="description" content="What Timo Särkkä is up to right now." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700&display=swap"
+    />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="index.html" class="nav-brand">
+          <img
+            src="images/profilepic_big.png"
+            alt=""
+            class="nav-avatar"
+            onerror="this.style.visibility = 'hidden'"
+          />
+          Timo Särkkä
+        </a>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="index.html" data-nav-link>Home</a></li>
+            <li><a href="about.html" data-nav-link>About me</a></li>
+            <li><a href="projects.html" data-nav-link>Projects</a></li>
+            <li><a href="writing.html" data-nav-link>Writing</a></li>
+            <li><a href="now.html" data-nav-link>Now</a></li>
+          </ul>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div class="nav-mobile" id="nav-mobile">
+        <a href="index.html" data-nav-link>Home</a>
+        <a href="about.html" data-nav-link>About me</a>
+        <a href="projects.html" data-nav-link>Projects</a>
+        <a href="writing.html" data-nav-link>Writing</a>
+        <a href="now.html" data-nav-link>Now</a>
+        <div class="nav-mobile-footer">
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
 
-<header>
-  <nav class="nav">
-    <a href="index.html" class="nav-brand">
-      <img src="images/avatar.jpg" alt="" class="nav-avatar" onerror="this.style.visibility='hidden'">
-      Timo Särkä
-    </a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="index.html" data-nav-link>Home</a></li>
-        <li><a href="about.html" data-nav-link>About me</a></li>
-        <li><a href="projects.html" data-nav-link>Projects</a></li>
-        <li><a href="writing.html" data-nav-link>Writing</a></li>
-        <li><a href="now.html" data-nav-link>Now</a></li>
-      </ul>
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-    </div>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="index.html" data-nav-link>Home</a>
-    <a href="about.html" data-nav-link>About me</a>
-    <a href="projects.html" data-nav-link>Projects</a>
-    <a href="writing.html" data-nav-link>Writing</a>
-    <a href="now.html" data-nav-link>Now</a>
-    <div class="nav-mobile-footer">
-      <span>Toggle theme</span>
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
+    <main>
+      <div class="page">
+        <h1 class="page-title">Now</h1>
 
-<main>
-  <div class="page">
-    <h1 class="page-title">Now</h1>
+        <div class="now-intro">
+          <p>
+            Some things I'm learning, building or just finding interesting right
+            <a href="https://nownownow.com/about" target="_blank" rel="noopener"
+              >now</a
+            >.
+          </p>
+          <p class="now-updated">Last updated 8.2.2026</p>
+        </div>
 
-    <div class="now-intro">
-      <p>Some things I'm learning, building or just finding interesting right <a href="https://nownownow.com/about" target="_blank" rel="noopener">now</a>.</p>
-      <p class="now-updated">Last updated 8.2.2026</p>
-    </div>
+        <div class="now-section">
+          <h2>I'm now a dbt Certified Developer</h2>
+          <p>
+            I passed the exam! It was a bit harder than expected actually. If
+            you're going to take it, I recommend reviewing all the
+            <a
+              href="https://docs.getdbt.com/docs/introduction"
+              target="_blank"
+              rel="noopener"
+              >fundamental concepts of dbt</a
+            >
+            and then doing some free practice tests (you'll find a bunch of them
+            through Google). Aim for about ~90% pass rate in the practice exams
+            before taking on the real one.
+          </p>
+        </div>
 
-    <div class="now-section">
-      <h2>I'm now a dbt Certified Developer</h2>
-      <p>I passed the exam! It was a bit harder than expected actually. If you're going to take it, I recommend reviewing all the <a href="https://docs.getdbt.com/docs/introduction" target="_blank" rel="noopener">fundamental concepts of dbt</a> and then doing some free practice tests (you'll find a bunch of them through Google). Aim for about ~90% pass rate in the practice exams before taking on the real one.</p>
-    </div>
+        <div class="now-section">
+          <h2>ssp.sh</h2>
+          <p>
+            This is actually not a new discovery for me, but I only recently
+            realized how awesome
+            <a href="https://ssp.sh" target="_blank" rel="noopener"
+              >Simon Späti's website</a
+            >
+            for data engineering really is. It's an absolute treasure trove for
+            DE knowledge. To start with, I really recommend reading one of his
+            latest posts:
+            <a
+              href="https://ssp.sh/blog/diary-of-a-data-engineer/"
+              target="_blank"
+              rel="noopener"
+              >A Diary of a Data Engineer</a
+            >.
+          </p>
+        </div>
 
-    <div class="now-section">
-      <h2>ssp.sh</h2>
-      <p>This is actually not a new discovery for me, but I only recently realized how awesome <a href="https://ssp.sh" target="_blank" rel="noopener">Simon Späti's website</a> for data engineering really is. It's an absolute treasure trove for DE knowledge. To start with, I really recommend reading one of his latest posts: <a href="https://ssp.sh/blog/diary-of-a-data-engineer/" target="_blank" rel="noopener">A Diary of a Data Engineer</a>.</p>
-    </div>
+        <div class="now-section">
+          <h2>In search of a side project</h2>
+          <p>
+            Now that spring is soon here, I feel like I need a new project or a
+            hobby in my life. I haven't decided yet what it could be. Building a
+            <a
+              href="https://magicmirror.builders"
+              target="_blank"
+              rel="noopener"
+              >magic mirror</a
+            >? Woodworking? Or shall I starting brewing my own beer? Who knows.
+            But that's what makes life so exciting! You'll never know what the
+            tide will bring in tomorrow.
+          </p>
+        </div>
+      </div>
+    </main>
 
-    <div class="now-section">
-      <h2>In search of a side project</h2>
-      <p>Now that spring is soon here, I feel like I need a new project or a hobby in my life. I haven't decided yet what it could be. Building a <a href="https://magicmirror.builders" target="_blank" rel="noopener">magic mirror</a>? Woodworking? Or shall I starting brewing my own beer? Who knows. But that's what makes life so exciting! You'll never know what the tide will bring in tomorrow.</p>
-    </div>
-  </div>
-</main>
-
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

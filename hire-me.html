@@ -1,138 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hire me — Timo Särkä</title>
-  <meta name="description" content="Work with Timo Särkä — freelance analytics engineering and data pipeline consulting.">
-  <link rel="stylesheet" href="css/style.css">
-  <script>
-    (function () {
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === 'dark' || (!saved && prefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    })();
-  </script>
-</head>
-<body>
-
-<header>
-  <nav class="nav">
-    <a href="index.html" class="nav-brand">
-      <img src="images/avatar.jpg" alt="" class="nav-avatar" onerror="this.style.visibility='hidden'">
-      Timo Särkä
-    </a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="index.html" data-nav-link>Home</a></li>
-        <li><a href="about.html" data-nav-link>About me</a></li>
-        <li><a href="projects.html" data-nav-link>Projects</a></li>
-        <li><a href="writing.html" data-nav-link>Writing</a></li>
-        <li><a href="now.html" data-nav-link>Now</a></li>
-      </ul>
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-    </div>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="index.html" data-nav-link>Home</a>
-    <a href="about.html" data-nav-link>About me</a>
-    <a href="projects.html" data-nav-link>Projects</a>
-    <a href="writing.html" data-nav-link>Writing</a>
-    <a href="now.html" data-nav-link>Now</a>
-    <div class="nav-mobile-footer">
-      <span>Toggle theme</span>
-      <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="page">
-    <h1 class="page-title">Hire me</h1>
-
-    <div class="hire-draft-notice">
-      This page is a draft and is not linked publicly yet. It will go live when the freelancer offer is ready.
-    </div>
-
-    <div class="hire-section">
-      <h2>How I Can Help</h2>
-      <p>I'm an analytics engineer with hands-on experience building modern data stacks from the ground up. If your team is drowning in messy data, struggling with slow pipelines, or missing the visibility to make good decisions — that's the kind of problem I enjoy solving.</p>
-      <p>Specifically, I can help you with:</p>
-      <ul>
-        <li>Designing and building scalable data pipelines with dbt and Snowflake</li>
-        <li>Implementing Data Vault 2.0 modelling for robust historical data tracking</li>
-        <li>Migrating legacy ETL workflows to a modern, maintainable stack</li>
-        <li>Setting up testing, documentation, and data quality frameworks</li>
-        <li>Coaching your in-house team on dbt best practices</li>
-        <li>One-off audits of your existing dbt project or data architecture</li>
-      </ul>
-    </div>
-
-    <div class="hire-section">
-      <h2>Ways of Working</h2>
-      <p>I work best in focused, async-friendly engagements. I'm not looking for micromanaged hour-tracking setups — I prefer to agree on clear outcomes and deliver them.</p>
-      <ul>
-        <li><strong>Project-based.</strong> A scoped piece of work with a clear deliverable. Best for migrations, new pipeline builds, or audits.</li>
-        <li><strong>Part-time retainer.</strong> A set number of hours per week, ongoing. Good for teams that need consistent support without a full-time hire.</li>
-        <li><strong>Advisory.</strong> Regular calls to review architecture decisions, unblock your team, or sanity-check direction.</li>
-      </ul>
-      <p>I'm based in Helsinki (EET/EEST) and work primarily in English and Finnish.</p>
-    </div>
-
-    <div class="hire-section">
-      <h2>Preferred Tech Stack</h2>
-      <p>These are the tools I know deeply. Engagements in this stack will go fastest and produce the best results.</p>
-
-      <h3>Core</h3>
-      <div class="tech-stack">
-        <span class="tech-tag">dbt</span>
-        <span class="tech-tag">Snowflake</span>
-        <span class="tech-tag">Data Vault 2.0</span>
-        <span class="tech-tag">SQL</span>
-        <span class="tech-tag">Python</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hire me — Timo Särkä</title>
+    <meta
+      name="description"
+      content="Work with Timo Särkä — freelance analytics engineering and data pipeline consulting."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="index.html" class="nav-brand">
+          <img
+            src="images/profilepic_big.png"
+            alt=""
+            class="nav-avatar"
+            onerror="this.style.visibility = 'hidden'"
+          />
+          Timo Särkä
+        </a>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="index.html" data-nav-link>Home</a></li>
+            <li><a href="about.html" data-nav-link>About me</a></li>
+            <li><a href="projects.html" data-nav-link>Projects</a></li>
+            <li><a href="writing.html" data-nav-link>Writing</a></li>
+            <li><a href="now.html" data-nav-link>Now</a></li>
+          </ul>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
+        </div>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div class="nav-mobile" id="nav-mobile">
+        <a href="index.html" data-nav-link>Home</a>
+        <a href="about.html" data-nav-link>About me</a>
+        <a href="projects.html" data-nav-link>Projects</a>
+        <a href="writing.html" data-nav-link>Writing</a>
+        <a href="now.html" data-nav-link>Now</a>
+        <div class="nav-mobile-footer">
+          <span>Toggle theme</span>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
+        </div>
       </div>
+    </header>
 
-      <h3>Data platforms &amp; infra</h3>
-      <div class="tech-stack">
-        <span class="tech-tag">Azure</span>
-        <span class="tech-tag">GitHub Actions</span>
-        <span class="tech-tag">Airflow</span>
-        <span class="tech-tag">Matillion</span>
+    <main>
+      <div class="page">
+        <h1 class="page-title">Hire me</h1>
+
+        <div class="hire-draft-notice">
+          This page is a draft and is not linked publicly yet. It will go live
+          when the freelancer offer is ready.
+        </div>
+
+        <div class="hire-section">
+          <h2>How I Can Help</h2>
+          <p>
+            I'm an analytics engineer with hands-on experience building modern
+            data stacks from the ground up. If your team is drowning in messy
+            data, struggling with slow pipelines, or missing the visibility to
+            make good decisions — that's the kind of problem I enjoy solving.
+          </p>
+          <p>Specifically, I can help you with:</p>
+          <ul>
+            <li>
+              Designing and building scalable data pipelines with dbt and
+              Snowflake
+            </li>
+            <li>
+              Implementing Data Vault 2.0 modelling for robust historical data
+              tracking
+            </li>
+            <li>
+              Migrating legacy ETL workflows to a modern, maintainable stack
+            </li>
+            <li>
+              Setting up testing, documentation, and data quality frameworks
+            </li>
+            <li>Coaching your in-house team on dbt best practices</li>
+            <li>
+              One-off audits of your existing dbt project or data architecture
+            </li>
+          </ul>
+        </div>
+
+        <div class="hire-section">
+          <h2>Ways of Working</h2>
+          <p>
+            I work best in focused, async-friendly engagements. I'm not looking
+            for micromanaged hour-tracking setups — I prefer to agree on clear
+            outcomes and deliver them.
+          </p>
+          <ul>
+            <li>
+              <strong>Project-based.</strong> A scoped piece of work with a
+              clear deliverable. Best for migrations, new pipeline builds, or
+              audits.
+            </li>
+            <li>
+              <strong>Part-time retainer.</strong> A set number of hours per
+              week, ongoing. Good for teams that need consistent support without
+              a full-time hire.
+            </li>
+            <li>
+              <strong>Advisory.</strong> Regular calls to review architecture
+              decisions, unblock your team, or sanity-check direction.
+            </li>
+          </ul>
+          <p>
+            I'm based in Helsinki (EET/EEST) and work primarily in English and
+            Finnish.
+          </p>
+        </div>
+
+        <div class="hire-section">
+          <h2>Preferred Tech Stack</h2>
+          <p>
+            These are the tools I know deeply. Engagements in this stack will go
+            fastest and produce the best results.
+          </p>
+
+          <h3>Core</h3>
+          <div class="tech-stack">
+            <span class="tech-tag">dbt</span>
+            <span class="tech-tag">Snowflake</span>
+            <span class="tech-tag">Data Vault 2.0</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">Python</span>
+          </div>
+
+          <h3>Data platforms &amp; infra</h3>
+          <div class="tech-stack">
+            <span class="tech-tag">Azure</span>
+            <span class="tech-tag">GitHub Actions</span>
+            <span class="tech-tag">Airflow</span>
+            <span class="tech-tag">Matillion</span>
+          </div>
+
+          <h3>Visualization &amp; BI</h3>
+          <div class="tech-stack">
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">D3.js</span>
+            <span class="tech-tag">Metabase</span>
+          </div>
+        </div>
+
+        <div class="hire-section">
+          <h2>General Conditions</h2>
+          <ul>
+            <li>
+              <strong>Availability.</strong> I take on a limited number of
+              clients at a time to ensure quality. Reach out early if you have a
+              timeline in mind.
+            </li>
+            <li>
+              <strong>Rate.</strong> Project and retainer rates are quoted
+              individually based on scope and duration. I invoice monthly or per
+              milestone.
+            </li>
+            <li>
+              <strong>Contract.</strong> I work with a simple, plain-language
+              service agreement. No surprises.
+            </li>
+            <li>
+              <strong>NDA.</strong> Happy to sign one before detailed
+              discussions if needed.
+            </li>
+            <li>
+              <strong>Location.</strong> Fully remote. I can travel for
+              kick-offs or workshops when necessary.
+            </li>
+          </ul>
+          <p>
+            Interested? Drop me a line at
+            <a href="mailto:timojsarkka@gmail.com">timojsarkka@gmail.com</a> and
+            tell me a bit about what you're working on.
+          </p>
+        </div>
       </div>
+    </main>
 
-      <h3>Visualization &amp; BI</h3>
-      <div class="tech-stack">
-        <span class="tech-tag">Power BI</span>
-        <span class="tech-tag">D3.js</span>
-        <span class="tech-tag">Metabase</span>
-      </div>
-    </div>
-
-    <div class="hire-section">
-      <h2>General Conditions</h2>
-      <ul>
-        <li><strong>Availability.</strong> I take on a limited number of clients at a time to ensure quality. Reach out early if you have a timeline in mind.</li>
-        <li><strong>Rate.</strong> Project and retainer rates are quoted individually based on scope and duration. I invoice monthly or per milestone.</li>
-        <li><strong>Contract.</strong> I work with a simple, plain-language service agreement. No surprises.</li>
-        <li><strong>NDA.</strong> Happy to sign one before detailed discussions if needed.</li>
-        <li><strong>Location.</strong> Fully remote. I can travel for kick-offs or workshops when necessary.</li>
-      </ul>
-      <p>Interested? Drop me a line at <a href="mailto:timojsarkka@gmail.com">timojsarkka@gmail.com</a> and tell me a bit about what you're working on.</p>
-    </div>
-  </div>
-</main>
-
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
