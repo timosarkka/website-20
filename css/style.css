@@ -253,6 +253,12 @@ header {
   margin-bottom: 28px;
 }
 
+.page hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
 /* ============================================================
    Home Page
    ============================================================ */
@@ -314,12 +320,12 @@ header {
   margin-bottom: 36px;
 }
 .about-meta p {
-  color: var(--text-muted);
-  font-size: 0.875rem;
   margin-bottom: 4px;
 }
 .about-meta .updated {
   font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.875rem;
 }
 
 .about-section {
@@ -351,7 +357,6 @@ header {
   margin-bottom: 6px;
 }
 .writing-note {
-  color: var(--text-muted);
   font-size: 0.875rem;
 }
 
@@ -407,6 +412,11 @@ header {
 /* ============================================================
    Projects Page
    ============================================================ */
+.projects-intro {
+  font-size: 0.875rem;
+  margin-bottom: 28px;
+}
+
 .projects-controls {
   display: flex;
   flex-wrap: wrap;
@@ -522,7 +532,6 @@ header {
 
 .projects-empty {
   grid-column: 1 / -1;
-  color: var(--text-muted);
   font-size: 0.9375rem;
   padding: 20px 0;
 }
@@ -537,7 +546,6 @@ header {
   margin-bottom: 40px;
   border-radius: 0 4px 4px 0;
   font-size: 0.875rem;
-  color: var(--text-muted);
 }
 
 .hire-section {
