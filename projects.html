@@ -127,17 +127,27 @@
         <h1 class="page-title">Projects</h1>
 
         <p class="projects-intro">
-          This is a collection of my personal showcase projects. They include
-          data engineering work as well as data visualization pieces.
+          This is a collection of my personal showcase projects. They are
+          created based on my own interests, but mainly using the same
+          technologies I would use also professionally.
+        </p>
+
+        <p class="projects-intro">
+          You can use the provided keywords on top for filtering. Hover over the
+          project tile visual to see a short description of the project.
         </p>
 
         <div class="projects-controls">
           <div class="projects-filter">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="data-viz">Data Viz</button>
-            <button class="filter-btn" data-filter="data-engineering">Data Engineering</button>
+            <button class="filter-btn" data-filter="data-engineering">
+              Data Engineering
+            </button>
             <button class="filter-btn" data-filter="dbt">dbt</button>
-            <button class="filter-btn" data-filter="snowflake">Snowflake</button>
+            <button class="filter-btn" data-filter="snowflake">
+              Snowflake
+            </button>
             <button class="filter-btn" data-filter="d3">D3.js</button>
             <button class="filter-btn" data-filter="power-bi">Power BI</button>
           </div>
@@ -183,7 +193,9 @@
               ? `background-image: url('${p.image}'); background-size: cover; background-position: center;`
               : `background-color: ${p.placeholderColor};`;
             const pills = p.tags
-              .map((t) => `<span class="project-tag">${tagLabels[t] || t}</span>`)
+              .map(
+                (t) => `<span class="project-tag">${tagLabels[t] || t}</span>`,
+              )
               .join("");
             return `
       <a class="project-card${p.size === "tall" ? " tall" : ""}" href="${p.url}" target="_blank" rel="noopener">
