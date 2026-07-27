@@ -47,7 +47,7 @@ const projects = [
     title: "Snowflake Cost Monitor",
     description:
       "A Power BI dashboard tracking Snowflake compute and storage costs across warehouses, with automated dbt-powered data ingestion.",
-    tags: ["data-engineering", "snowflake", "dbt", "power-bi"],
+    tags: ["data-engineering", "snowflake", "dbt"],
     url: "https://github.com/timosarkka/snowflake-cost-monitor",
     year: 2025,
     size: "tall",
@@ -69,7 +69,7 @@ const projects = [
     title: "Sales Pipeline Dashboard",
     description:
       "A Power BI report surfacing pipeline health and conversion rates from a Snowflake data warehouse, refreshed daily via dbt models.",
-    tags: ["data-engineering", "snowflake", "dbt", "power-bi"],
+    tags: ["data-engineering", "snowflake", "dbt"],
     url: "https://github.com/timosarkka/sales-pipeline-dashboard",
     year: 2025,
     size: "normal",
