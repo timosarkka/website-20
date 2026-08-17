@@ -588,6 +588,56 @@ header {
 }
 
 /* ============================================================
+   Post Page
+   ============================================================ */
+.post-intro {
+  margin-bottom: 8px;
+}
+.post-intro p + p {
+  margin-top: 12px;
+}
+
+.post-section {
+  margin-bottom: 32px;
+}
+.post-section h2 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.post-section p + p {
+  margin-top: 12px;
+}
+.post-section ul,
+.post-section ol {
+  list-style: disc;
+  padding-left: 18px;
+  margin-top: 12px;
+}
+.post-section ol {
+  list-style: decimal;
+}
+.post-section ul li,
+.post-section ol li {
+  margin-bottom: 5px;
+}
+.post-section p + ul,
+.post-section p + ol {
+  margin-top: 8px;
+}
+.post-footnote {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.post-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 0.875rem;
+}
+
+/* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 900px) {
