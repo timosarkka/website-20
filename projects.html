@@ -131,8 +131,8 @@
         </p>
 
         <p class="projects-intro">
-          You can use the provided keywords on top for filtering. Hover over the
-          project tile visual to see a short description of the project.
+          You can use the provided keywords on top for filtering. Click a
+          project tile to open its repository.
         </p>
 
         <div class="projects-controls">
@@ -145,9 +145,8 @@
             <button class="filter-btn" data-filter="snowflake">
               Snowflake
             </button>
-            <button class="filter-btn" data-filter="agents">Agents</button>
-            <button class="filter-btn" data-filter="Claude Code">
-              Claude Code
+            <button class="filter-btn" data-filter="data-vault">
+              Data Vault
             </button>
           </div>
         </div>
@@ -162,11 +161,10 @@
     <script src="js/main.js"></script>
     <script>
       const tagLabels = {
-        "data-viz": "Data Viz",
         "data-engineering": "Data Engineering",
         dbt: "dbt",
         snowflake: "Snowflake",
-        d3: "D3.js",
+        "data-vault": "Data Vault",
       };
 
       function renderProjects() {
@@ -188,7 +186,7 @@
         grid.innerHTML = filtered
           .map((p) => {
             const bgStyle = p.image
-              ? `background-image: url('${p.image}'); background-size: cover; background-position: center;`
+              ? `background-image: url('${p.image}'); background-size: ${p.imageSize || "cover"}; background-position: ${p.imagePosition || "center"};`
               : `background-color: ${p.placeholderColor};`;
             const pills = p.tags
               .map(
