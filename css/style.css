@@ -348,41 +348,6 @@ header {
 }
 
 /* ============================================================
-   Writing Page
-   ============================================================ */
-.writing-intro {
-  margin-bottom: 36px;
-}
-.writing-intro p {
-  margin-bottom: 6px;
-}
-.writing-note {
-  font-size: 0.875rem;
-}
-
-.writing-topic {
-  margin-bottom: 32px;
-}
-.writing-topic h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.writing-topic ul {
-  list-style: none;
-  padding: 0;
-}
-.writing-topic ul li {
-  margin-bottom: 8px;
-}
-
-.ext-link::after {
-  content: " ↗";
-  font-size: 0.85em;
-  vertical-align: 0.05em;
-}
-
-/* ============================================================
    Now Page
    ============================================================ */
 .now-intro {
@@ -642,56 +607,6 @@ header {
   border-radius: 20px;
   font-size: 0.8125rem;
   color: var(--text-muted);
-}
-
-/* ============================================================
-   Post Page
-   ============================================================ */
-.post-intro {
-  margin-bottom: 8px;
-}
-.post-intro p + p {
-  margin-top: 12px;
-}
-
-.post-section {
-  margin-bottom: 32px;
-}
-.post-section h2 {
-  font-size: 1.0625rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.post-section p + p {
-  margin-top: 12px;
-}
-.post-section ul,
-.post-section ol {
-  list-style: disc;
-  padding-left: 18px;
-  margin-top: 12px;
-}
-.post-section ol {
-  list-style: decimal;
-}
-.post-section ul li,
-.post-section ol li {
-  margin-bottom: 5px;
-}
-.post-section p + ul,
-.post-section p + ol {
-  margin-top: 8px;
-}
-.post-footnote {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-.post-back {
-  display: inline-block;
-  margin-bottom: 20px;
-  font-size: 0.875rem;
 }
 
 /* ============================================================
